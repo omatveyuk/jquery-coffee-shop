@@ -66,6 +66,14 @@
 
     var total = 0;
 
+    function fadeImage(img, delay, fOut, fIn) {
+
+        setTimeout(function() 
+            { myImage.attr('src', img).myImage.fadeIn(fIn).fadeOut(fOut)},
+            delay);
+    }
+
+
     function makeCoffee(drinkType) {
         myImage.attr("src", "static/coffee_beans.jpg").fadeOut(2000);
         setTimeout(function() 
