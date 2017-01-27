@@ -69,25 +69,27 @@
     function fadeImage(img, delay, fOut, fIn) {
 
         setTimeout(function() 
-            { myImage.attr('src', img).myImage.fadeIn(fIn).fadeOut(fOut)},
+            { myImage.attr('src', img).fadeIn(fIn).fadeOut(fOut)},
             delay);
     }
 
 
     function makeCoffee(drinkType) {
-        myImage.attr("src", "static/coffee_beans.jpg").fadeOut(2000);
-        setTimeout(function() 
-          {
-            myImage.attr("src", "static/coffee_machine.jpg").fadeIn(2000).fadeOut(2000);
-           }, 2000);
-        setTimeout(function() 
-          { 
-            myImage.attr("src", "static/coffee_mug.jpg").fadeIn(2000).fadeOut(2000); 
-           }, 6000);
-         setTimeout(function() 
-            { 
-               myImage.attr("src", "static/coffee_beans.jpg").fadeIn(2000); 
-            }, 10000);
+        fadeImage("static/coffee_machine.jpg", 2000, 0, 2000);
+        //setTimeout(function() 
+        //  {
+        //    myImage.attr("src", "static/coffee_machine.jpg").fadeIn(2000).fadeOut(2000);
+        //   }, 2000);
+        fadeImage("static/coffee_mug.jpg", 6000, 2000, 2000)
+        //setTimeout(function() 
+        //  { 
+        //    myImage.attr("src", "static/coffee_mug.jpg").fadeIn(2000).fadeOut(2000); 
+        //   }, 6000);
+        fadeImage("static/coffee_beans.jpg", 10000, 0, 2000)
+         //setTimeout(function() 
+        //    { 
+        //       myImage.attr("src", "static/coffee_beans.jpg").fadeIn(2000); 
+        //    }, 10000);
 
         // add new drink to the ordered coffee
         drinkOrdered.push(drinkType);
